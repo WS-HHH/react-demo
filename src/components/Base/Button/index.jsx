@@ -20,13 +20,15 @@ export default function Button(props) {
     className,
     size = 'middle',
     type = 'default',
+    ...rest
   } = props
+
   const btnClass = classNames(btnBase, className, {
     [btnType[`${type}`]]: true,
     [btnSize[`${size}`]]: true,
   });
 
   return (
-    <button className={btnClass}>{children}</button>
+    <button className={btnClass} {...rest}>{children}</button>
   )
 }
