@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# react-demo项目介绍
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+个人学习react时写的demo，案例名即分支名。
 
-## Available Scripts
+### react组件化
 
-In the project directory, you can run:
+In the project di
 
 ### `npm start`
 
