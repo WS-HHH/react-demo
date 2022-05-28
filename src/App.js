@@ -1,7 +1,7 @@
 import './App.css';
 import DemoUseState from './pages/Hooks/DemoUseState';
 import DemoUseEffect from './pages/Hooks/DemoUseEffect';
-
+import DemoUseContext from './pages/Hooks/DemoUseContext';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
 
       <DemoUseState />
       <DemoUseEffect />
+      <DemoUseContext />
     </div>
   );
 }
