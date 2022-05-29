@@ -3,6 +3,7 @@ import DemoUseState from './pages/Hooks/DemoUseState';
 import DemoUseEffect from './pages/Hooks/DemoUseEffect';
 import DemoUseContext from './pages/Hooks/DemoUseContext';
 import DemoUseId from './pages/Hooks/DemoUseId';
+import DemoUseReducer from './pages/Hooks/DemoUseReducer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <DemoUseEffect />
       <DemoUseContext />
       <DemoUseId />
+      <DemoUseReducer />
     </div>
   );
 }
