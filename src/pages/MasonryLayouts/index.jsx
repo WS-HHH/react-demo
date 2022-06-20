@@ -1,15 +1,9 @@
 import React from "react";
-import styles from './index.css'
-// import img01 from '../public/img/01.jpeg'
-// import img02 from '/img/02.jpeg'
-// import img03 from '/img/03.webp'
-// import img04 from '/img/04.jpeg'
-import {
-  img01,
-  img02,
-  img03,
-  img04,
-} from '../../../public/img'
+import './index.css'
+import img01 from '../../../public/img/img01.jpeg'
+import img02 from '../../../public/img/img02.jpeg'
+import img03 from '../../../public/img/img03.webp'
+import img04 from '../../../public/img/img04.jpeg'
 
 /**
  * 实现效果
@@ -27,6 +21,14 @@ const IMG = [
   img02,
   img03,
   img04,
+  img03,
+  img01,
+  img02,
+  img03,
+  img02,
+  img01,
+  img02,
+  img03,
 ];
 
 function MasonryLayouts() {
@@ -45,24 +47,91 @@ export default MasonryLayouts;
  * 
  */
 function Demo1() {
-  
-  return (
-    <div className={styles.demo1}>
-      {
-        IMG.map((item, index) => {
-          return (
-            <>
-              <div>
-                <img src={IMG[index]} alt="" />
-              </div>
-              <div>
-                <img src={IMG[index + 1]} alt="" />
-              </div>
-            </>
-          )
-        })
+  const leftData = [];
+  const rightData = [];
+  const imgHeight = [];
+  const img = new Image();
+//   [
+//     667,
+//     399,
+//     642,
+//     150,
+//     642,
+//     667,
+//     399,
+//     642,
+//     399,
+//     667,
+//     399,
+//     642
+//    ]
+  IMG.map(item => {
+    img.src = item;
+    imgHeight.push(img.height)
+
+    return imgHeight;
+  })
+
+  console.log('img', img);
+  console.log('imgHeight', imgHeight);
+  function computeData() {
+
+    
+    IMG.map((item, index) => {
+      if ((index + 1) % 2 !== 0) {
+        leftData.push(item)      
+      } else {
+        rightData.push(item)
       }
 
+      return { leftData, rightData }
+    })
+    
+    // for ( let i = 0; i < IMG.length / 2; i+2) {
+    //   let currentMax = Math.max(imgHeight[i], imgHeight[i+1]) === imgHeight[i] ? 'left' : 'right';
+
+    //   if (currentMax === 'left') {
+    //     leftData.push(IMG[i]);
+    //   } else {
+    //     rightData.push(IMG[i + 1]);
+    //   }
+    // }
+
+    // return {
+    //   leftData,
+    //   rightData
+    // }
+  }
+
+  computeData()
+
+  return (
+    <div className="demo1">
+      <>
+        <div className="left">
+          {
+            leftData.map(item => {
+              return (
+                <div className="item">
+                  <img src={item} alt="" />
+                </div>
+              )
+            })
+          }
+        </div>
+
+        <div className="right">
+          {
+            rightData.map(item => {
+              return (
+                <div className="item">
+                  <img src={item} alt="" />
+                </div>
+              )
+            })
+          }          
+        </div>
+      </>
     </div>
   )
 }

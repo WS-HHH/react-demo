@@ -1,0 +1,14 @@
+.demo1 {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.demo1 .left, .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo1 .item {
+  margin-bottom: 10px;
+}
